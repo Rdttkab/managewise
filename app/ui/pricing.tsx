@@ -40,58 +40,61 @@ const Pricing = () => {
     },
   ];
   return (
-    <section className="p-0 pt-[80px] pb-[100px]">
-      <div className="flex flex-col justify-center items-center">
-        <div className="flex flex-col justify-center items-center gap-5 mb-[40px]">
-          <div className="flex justify-center items-center gap-[6px] bg-white border border-solid border-[#DDD9D4] rounded-lg py-1 px-2.5">
+    <section className="bg-white p-0 pb-[100px] pt-[80px]">
+      <div className="flex flex-col items-center justify-center">
+        <div className="mb-[40px] flex flex-col items-center justify-center gap-5">
+          <div className="flex items-center justify-center gap-[6px] rounded-lg border border-solid border-[#DDD9D4] bg-white px-2.5 py-1">
             <p className="">💲</p>
             <p className="text-primary">Pricing</p>
           </div>
-          <div className="max-w-7xl w-full">
-            <h5 className="text-center text-[56px] font-medium tracking-[-1px] leading-[1em] not-italic text-[#1c1c1c]">
+          <div className="w-full max-w-7xl">
+            <h5 className="text-center text-[56px] font-medium not-italic leading-[1em] tracking-[-1px] text-[#1c1c1c]">
               Select your ideal &nbsp;
               <span className="text-secondary">Pricing</span>
             </h5>
           </div>
-          <div className="max-w-[500px] w-full">
-            <p className="text-center text-thirdly font-medium text-xl tracking-[-0.5px]">
+          <div className="w-full max-w-[500px]">
+            <p className="text-center text-xl font-medium tracking-[-0.5px] text-tertiary">
               At Manage Wise, we believe in providing you with pricing plans
               that adapt to your unique needs.
             </p>
           </div>
         </div>
-        <div className="flex justify-center items-center gap-5 max-w-7xl w-full">
+        <div className="flex w-full max-w-7xl items-center justify-center gap-5">
           {pricing.map((item) => (
             <div
               key={item.name}
               className={clsx(
-                "rounded-[30px] flex flex-col justify-center items-start gap-2.5 flex-2 py-[40px] px-[30px] bg-fourthly",
-                item.recommended && "pt-[50px] bg-fifth"
-              )}>
-              <div className="flex flex-col justify-center items-start gap-4">
-                <div className="px-2.5 py-1 rounded-lg bg-white">
+                "flex flex-2 flex-col items-start justify-center gap-2.5 rounded-[30px] bg-quaternary px-[30px] py-[40px]",
+                item.recommended && "bg-quinary pt-[50px]",
+              )}
+            >
+              <div className="flex flex-col items-start justify-center gap-4">
+                <div className="rounded-lg bg-white px-2.5 py-1">
                   {/* --font-selector: R0Y7T3V0Zml0LTYwMA==;
     --framer-font-family: "Outfit", sans-serif;*/}
-                  <p className="uppercase text-secondary font-semibold text-xs">
+                  <p className="text-xs font-semibold uppercase text-secondary">
                     {item.name}
                   </p>
                 </div>
-                <div className="flex justify-start items-end gap-1.5">
+                <div className="flex items-end justify-start gap-1.5">
                   {/* framer-font-family: "Outfit", sans-serif; */}
                   <h2
                     className={clsx(
-                      "text-center font-medium text-fifth text-[56px] tracking-[-1px] leading-[1em]",
-                      item.recommended && "text-white"
-                    )}>
+                      "text-center text-[56px] font-medium leading-[1em] tracking-[-1px] text-quinary",
+                      item.recommended && "text-white",
+                    )}
+                  >
                     $<span>{item.price}</span>
                   </h2>
                   {/*     --font-selector: SW50ZXItTWVkaXVt;
     --framer-font-family: "Inter-Medium", "Inter", sans-serif; */}
                   <p
                     className={clsx(
-                      "text-start font-semibold text-base leading-[1.3em] text-[#333333]",
-                      item.recommended && "text-white"
-                    )}>
+                      "text-start text-base font-semibold leading-[1.3em] text-[#333333]",
+                      item.recommended && "text-white",
+                    )}
+                  >
                     /month
                   </p>
                 </div>
@@ -101,26 +104,29 @@ const Pricing = () => {
     height: 234px;
     
     width: 327px; */}
-                <div className="flex flex-col justify-start items-start gap-2.5 w-[327px] h-[234px] py-5">
+                <div className="flex h-[234px] w-[327px] flex-col items-start justify-start gap-2.5 py-5">
                   {item.features.map((feature) => (
                     <div
                       key={feature}
-                      className="flex justify-start items-center gap-2.5 ">
+                      className="flex items-center justify-start gap-2.5 "
+                    >
                       <div>
                         <svg
                           viewBox="0 0 20 20"
                           fill="currentColor"
                           width="24"
                           height="24"
-                          color='var(--token-7d9d6b70-3e5f-4b3e-ad0c-f37f53a2377b, rgb(93, 192, 133)) /* {"name":"Green"} */'>
+                          color='var(--token-7d9d6b70-3e5f-4b3e-ad0c-f37f53a2377b, rgb(93, 192, 133)) /* {"name":"Green"} */'
+                        >
                           <path
                             fill-rule="evenodd"
                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clip-rule="evenodd"></path>
+                            clip-rule="evenodd"
+                          ></path>
                         </svg>
                       </div>
                       {/* framer-font-family: "Inter-Medium", "Inter", sans-serif; */}
-                      <p className="text-start text-base font-medium tracking-normal leading-normal text-thirdly">
+                      <p className="text-start text-base font-medium leading-normal tracking-normal text-tertiary">
                         {feature}
                       </p>
                     </div>
@@ -130,19 +136,22 @@ const Pricing = () => {
               <div>
                 <a
                   className={clsx(
-                    "flex items-center justify-center rounded-xl bg-white py-4 px-5",
-                    item.recommended && "bg-primary text-white"
+                    "flex items-center justify-center rounded-xl bg-white px-5 py-4",
+                    item.recommended && "bg-primary text-white",
                   )}
                   tabIndex={0}
                   href="#"
                   target="_blank"
-                  rel="noopener">
+                  rel="noopener"
+                >
                   <div>
                     {/*     --font-selector: R0Y7T3V0Zml0LTYwMA==;
     --framer-font-family: "Outfit", sans-serif;
     --framer-text-color: var(--extracted-r6o4lv);
 } */}
-                    <p className="text-start text-lg font-semibold leading-[1.2rem] tracking-normal">Get started</p>
+                    <p className="text-start text-lg font-semibold leading-[1.2rem] tracking-normal">
+                      Get started
+                    </p>
                   </div>
                 </a>
               </div>

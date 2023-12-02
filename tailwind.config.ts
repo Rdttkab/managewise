@@ -16,9 +16,10 @@ const config: Config = {
       colors: {
         primary: "rgb(130, 71, 255)",
         secondary: "rgb(254, 129, 98)",
-        thirdly: "rgb(118, 117, 117)",
-        fourthly: "#EDEDFA",
-        fifth: "rgb(28, 28, 28)",
+        tertiary: "rgb(118, 117, 117)",
+        quaternary: "#EDEDFA",
+        quinary: "rgb(28, 28, 28)",
+        senary: "rgba(130, 71, 255, 0.2)",
       },
       flex: { 2: "1 0 0" },
     },
