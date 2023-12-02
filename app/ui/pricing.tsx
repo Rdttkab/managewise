@@ -40,8 +40,8 @@ const Pricing = () => {
     },
   ];
   return (
-    <section className="bg-white p-0 pb-[100px] pt-[80px]">
-      <div className="flex flex-col items-center justify-center">
+    <section className="flex flex-col items-center justify-start bg-white pb-[100px] pt-[80px]">
+      <div className="flex w-[90%] max-w-7xl flex-col items-center justify-center gap-2.5">
         <div className="mb-[40px] flex flex-col items-center justify-center gap-5">
           <div className="flex items-center justify-center gap-[6px] rounded-lg border border-solid border-[#DDD9D4] bg-white px-2.5 py-1">
             <p className="">💲</p>
@@ -60,7 +60,7 @@ const Pricing = () => {
             </p>
           </div>
         </div>
-        <div className="flex w-full max-w-7xl items-center justify-center gap-5">
+        <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-5 sm:flex-row">
           {pricing.map((item) => (
             <div
               key={item.name}
@@ -71,8 +71,7 @@ const Pricing = () => {
             >
               <div className="flex flex-col items-start justify-center gap-4">
                 <div className="rounded-lg bg-white px-2.5 py-1">
-                  {/* --font-selector: R0Y7T3V0Zml0LTYwMA==;
-    --framer-font-family: "Outfit", sans-serif;*/}
+                  {/* framer-font-family: "Outfit", sans-serif;*/}
                   <p className="text-xs font-semibold uppercase text-secondary">
                     {item.name}
                   </p>
@@ -87,8 +86,8 @@ const Pricing = () => {
                   >
                     $<span>{item.price}</span>
                   </h2>
-                  {/*     --font-selector: SW50ZXItTWVkaXVt;
-    --framer-font-family: "Inter-Medium", "Inter", sans-serif; */}
+                  {/*   
+                  --framer-font-family: "Inter-Medium", "Inter", sans-serif; */}
                   <p
                     className={clsx(
                       "text-start text-base font-semibold leading-[1.3em] text-[#333333]",
@@ -100,10 +99,6 @@ const Pricing = () => {
                 </div>
               </div>
               <div>
-                {/*     
-    height: 234px;
-    
-    width: 327px; */}
                 <div className="flex h-[234px] w-[327px] flex-col items-start justify-start gap-2.5 py-5">
                   {item.features.map((feature) => (
                     <div
@@ -136,8 +131,9 @@ const Pricing = () => {
               <div>
                 <a
                   className={clsx(
-                    "flex items-center justify-center rounded-xl bg-white px-5 py-4",
+                    "flex items-center justify-center rounded-xl px-5 py-4",
                     item.recommended && "bg-primary text-white",
+                    !item.recommended && "bg-white",
                   )}
                   tabIndex={0}
                   href="#"
@@ -145,10 +141,7 @@ const Pricing = () => {
                   rel="noopener"
                 >
                   <div>
-                    {/*     --font-selector: R0Y7T3V0Zml0LTYwMA==;
-    --framer-font-family: "Outfit", sans-serif;
-    --framer-text-color: var(--extracted-r6o4lv);
-} */}
+                    {/* --framer-font-family: "Outfit", sans-serif; */}
                     <p className="text-start text-lg font-semibold leading-[1.2rem] tracking-normal">
                       Get started
                     </p>

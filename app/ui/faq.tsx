@@ -35,29 +35,29 @@ const FAQ = () => {
   ];
   return (
     <section className="flex w-full items-center justify-center bg-white pb-[120px] pt-[150px]">
-      <div className="flex w-[90%] max-w-7xl items-start justify-center gap-2.5">
-        <div className="flex w-full max-w-[465px] flex-col items-start justify-center gap-5">
+      <div className="flex w-[90%] max-w-7xl flex-col items-start justify-center gap-2.5 sm:flex-row">
+        <div className="flex w-full max-w-[465px] flex-col items-center justify-center gap-5 sm:items-start">
           <div className="flex items-center justify-center gap-1.5 rounded-lg border border-solid border-senary px-2.5 py-1">
             <p>🙋‍♀️</p>
             <p className="uppercase text-primary">faq</p>
           </div>
           <div className="flex">
             {/* --framer-font-family: "Outfit", sans-serif; */}
-            <h5 className="text-start text-[56px] font-medium leading-[1em] tracking-[-1px] text-secondary">
+            <h5 className="text-center text-[56px] font-medium leading-[1em] tracking-[-1px] text-secondary sm:text-start">
               <span className="block text-quinary">Need</span>
               Answers?
             </h5>
           </div>
-          <div className="flex w-[70%] max-w-[550px] flex-col">
+          <div className="flex w-full max-w-[550px] flex-col items-center justify-center sm:w-[70%]">
             {/*     --framer-font-family: "Inter", sans-serif; */}
-            <p className="text-start text-[20px] font-medium leading-[1.5em] tracking-[-0.5px] text-tertiary">
+            <p className="text-center text-[20px] font-medium leading-[1.5em] tracking-[-0.5px] text-tertiary sm:text-start">
               Check out our most commonly asked questions below to find the
               information you need.
             </p>
           </div>
         </div>
-        <div className="flex w-3/5 max-w-full items-center justify-center">
-          <div className="flex w-full flex-col items-start justify-start gap-3">
+        <div className="flex w-full max-w-full items-center justify-center sm:w-3/5">
+          <div className="flex w-full flex-col items-center justify-start gap-3 sm:items-start">
             {faqs.map((faq, index) => (
               <Disclosure
                 key={index}
@@ -68,18 +68,20 @@ const FAQ = () => {
                   <>
                     <Disclosure.Button
                       className={clsx(
-                        "flex w-full items-start justify-between gap-6 py-5",
+                        "flex w-full items-center justify-between py-5 sm:items-start sm:gap-6",
                         open && "text-primary",
                       )}
                     >
                       <h6 className="text-left text-2xl font-semibold leading-[1.3em] tracking-[-0.5px]">
                         {faq.title}
                       </h6>
-                      {open ? (
-                        <XMarkIcon className="h-5 w-5 text-primary" />
-                      ) : (
-                        <PlusIcon className="h-5 w-5 text-primary" />
-                      )}
+                      <div className="h-[30px] w-[30px]">
+                        {open ? (
+                          <XMarkIcon className="h-5 w-5 text-primary" />
+                        ) : (
+                          <PlusIcon className="h-5 w-5 text-primary" />
+                        )}
+                      </div>
                     </Disclosure.Button>
                     <Transition
                       enter="transition duration-100 ease-out"
