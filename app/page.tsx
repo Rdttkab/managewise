@@ -1,4 +1,5 @@
 import FAQ from "./ui/faq";
+import Features from "./ui/features";
 import Footer from "./ui/footer";
 import Header from "./ui/header";
 import Hero from "./ui/hero";
@@ -10,6 +11,7 @@ export default function Home() {
       <Header />
       <main className="bg-[rgb(253, 242, 236)] mt-[100px] w-full">
         <Hero />
+        <Features />
         <FAQ />
         <Pricing />
         <Footer />
